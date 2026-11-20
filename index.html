@@ -21,13 +21,17 @@
   </script>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&amp;family=Barlow:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+  <link href="brand/forgesync-theme.css" rel="stylesheet"/>
   <title>
    ForgeSync | Business Process Optimization
   </title>
   <meta content="Expert consulting to streamline your operations and drive growth." name="description"/>
-  <link href="/favicon.ico" rel="icon" sizes="16x16" type="image/x-icon"/>
+  <meta content="#15181C" name="theme-color"/>
+  <link href="brand/forgesync-icon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="brand/forgesync-icon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="brand/forgesync-icon-180.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="favicon.ico" rel="icon" sizes="16x16 32x32 48x48" type="image/x-icon"/>
   <script>
    document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))
   </script>
@@ -38,43 +42,29 @@
   <div class="flex flex-col min-h-dvh bg-background">
    <header class="sticky top-0 z-50 w-full transition-all duration-300 bg-transparent">
     <div class="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-     <a class="flex items-center gap-2" href="#">
-      <svg class="lucide lucide-mountain h-6 w-6 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-       <path d="m8 3 4 8 5-5 5 15H2L8 3z">
-       </path>
+     <a aria-label="ForgeSync home" class="fs-logo fs-logo-on-dark" href="#" style="gap:6px">
+      <svg aria-hidden="true" class="fs-mark" height="32" viewBox="0 0 120 120" width="32" xmlns="http://www.w3.org/2000/svg">
+       <polygon class="fs-bar-snow" points="48,76 96,76 104,96 40,96">
+       </polygon>
+       <polygon class="fs-bar-snow" points="24,50 72,50 80,70 16,70">
+       </polygon>
+       <polygon class="fs-ember" points="48,24 96,24 104,44 40,44">
+       </polygon>
       </svg>
-      <span class="text-xl font-semibold text-foreground">
-       ForgeSync
+      <span class="fs-wordmark" style="font-size:24px">
+       <span class="fs-forge">Forge</span><span class="fs-sync">Sync</span>
       </span>
      </a>
-     <nav class="hidden items-center gap-6 text-sm font-medium md:flex">
-      <a class="text-foreground/80 transition-colors hover:text-foreground" href="#services">
-       Services
-      </a>
-      <a class="text-foreground/80 transition-colors hover:text-foreground" href="#about">
-       About Us
-      </a>
+     <nav class="fs-nav">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="https://projects.forgesync.co.nz">Projects</a>
      </nav>
-     <div class="flex items-center gap-4">
-      <button aria-controls="radix-«R1d7db»" aria-expanded="false" aria-haspopup="dialog" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden" data-state="closed" type="button">
-       <svg class="lucide lucide-menu h-6 w-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-        <line x1="4" x2="20" y1="12" y2="12">
-        </line>
-        <line x1="4" x2="20" y1="6" y2="6">
-        </line>
-        <line x1="4" x2="20" y1="18" y2="18">
-        </line>
-       </svg>
-       <span class="sr-only">
-        Toggle navigation menu
-       </span>
-      </button>
-     </div>
     </div>
    </header>
    <main class="flex-1">
-    <section class="relative w-full h-[90vh] min-h-[700px] flex items-center justify-center text-foreground bg-background">
-     <div class="relative z-10 container mx-auto px-4 md:px-6 text-center space-y-8">
+    <section class="relative w-full flex items-center justify-center text-foreground bg-background py-12 fs-hero">
+     <div class="relative z-10 container mx-auto px-4 md:px-6 text-center space-y-6">
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline font-bold tracking-tight">
        Unlock Your Business's Full Potential
       </h1>
@@ -89,21 +79,14 @@
         Request a Consultation
        </a>
       </div>
+      <p class="fs-hero-aside">
+       <a href="https://projects.forgesync.co.nz">See recent projects<svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h12M12 6l6 6-6 6"></path></svg></a>
+      </p>
      </div>
-     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
-      <a aria-label="Scroll to services" href="#services">
-       <svg class="lucide lucide-arrow-down w-8 h-8 text-muted-foreground animate-bounce" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 5v14">
-        </path>
-        <path d="m19 12-7 7-7-7">
-        </path>
-       </svg>
-      </a>
-     </div>
-    </section>
-    <section class="py-12 md:py-24 bg-secondary" id="services">
+     </section>
+    <section class="py-12 fs-section bg-secondary" id="services">
      <div class="container mx-auto px-4 md:px-6">
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="text-center max-w-3xl mx-auto fs-section-head">
        <h2 class="text-3xl md:text-5xl font-headline font-bold">
         Our Services
        </h2>
@@ -114,34 +97,7 @@
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
        <div class="rounded-lg text-card-foreground text-center flex flex-col items-center bg-card shadow-lg hover:shadow-primary/20 hover:border-primary/50 border transition-all duration-300 transform hover:-translate-y-2">
         <div class="flex flex-col space-y-1.5 p-6 items-center pb-4">
-         <svg class="lucide lucide-brain-circuit h-10 w-10 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z">
-          </path>
-          <path d="M9 13a4.5 4.5 0 0 0 3-4">
-          </path>
-          <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5">
-          </path>
-          <path d="M3.477 10.896a4 4 0 0 1 .585-.396">
-          </path>
-          <path d="M6 18a4 4 0 0 1-1.967-.516">
-          </path>
-          <path d="M12 13h4">
-          </path>
-          <path d="M12 18h6a2 2 0 0 1 2 2v1">
-          </path>
-          <path d="M12 8h8">
-          </path>
-          <path d="M16 8V5a2 2 0 0 1 2-2">
-          </path>
-          <circle cx="16" cy="13" r=".5">
-          </circle>
-          <circle cx="18" cy="3" r=".5">
-          </circle>
-          <circle cx="20" cy="21" r=".5">
-          </circle>
-          <circle cx="20" cy="8" r=".5">
-          </circle>
-         </svg>
+         <svg aria-hidden="true" class="fs-svc" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon class="fs-p-snow" points="84.26,53.95 94.57,54.52 94.57,65.48 84.26,66.05 81.43,72.88 88.32,80.57 80.57,88.32 72.88,81.43 66.05,84.26 65.48,94.57 54.52,94.57 53.95,84.26 47.12,81.43 39.43,88.32 31.68,80.57 38.57,72.88 35.74,66.05 25.43,65.48 25.43,54.52 35.74,53.95 38.57,47.12 31.68,39.43 39.43,31.68 47.12,38.57 53.95,35.74 54.52,25.43 65.48,25.43 66.05,35.74 72.88,38.57 80.57,31.68 88.32,39.43 81.43,47.12"></polygon><rect class="fs-p-ember" x="51" y="51" width="18" height="18"></rect></svg>
          <div class="font-semibold tracking-tight mt-4 text-xl">
           Process Automation
          </div>
@@ -152,12 +108,7 @@
        </div>
        <div class="rounded-lg text-card-foreground text-center flex flex-col items-center bg-card shadow-lg hover:shadow-primary/20 hover:border-primary/50 border transition-all duration-300 transform hover:-translate-y-2">
         <div class="flex flex-col space-y-1.5 p-6 items-center pb-4">
-         <svg class="lucide lucide-trending-up h-10 w-10 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17">
-          </polyline>
-          <polyline points="16 7 22 7 22 13">
-          </polyline>
-         </svg>
+         <svg aria-hidden="true" class="fs-svc" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect class="fs-p-snow-s" x="30" y="24" width="60" height="72" stroke-width="8"></rect><rect class="fs-p-snow" x="44" y="42" width="32" height="7"></rect><rect class="fs-p-ember" x="44" y="56" width="32" height="7"></rect><rect class="fs-p-snow" x="44" y="70" width="32" height="7"></rect></svg>
          <div class="font-semibold tracking-tight mt-4 text-xl">
           Product Ownership
          </div>
@@ -168,14 +119,7 @@
        </div>
        <div class="rounded-lg text-card-foreground text-center flex flex-col items-center bg-card shadow-lg hover:shadow-primary/20 hover:border-primary/50 border transition-all duration-300 transform hover:-translate-y-2">
         <div class="flex flex-col space-y-1.5 p-6 items-center pb-4">
-         <svg class="lucide lucide-target h-10 w-10 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10">
-          </circle>
-          <circle cx="12" cy="12" r="6">
-          </circle>
-          <circle cx="12" cy="12" r="2">
-          </circle>
-         </svg>
+         <svg aria-hidden="true" class="fs-svc" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect class="fs-p-snow" x="20" y="38" width="80" height="9"></rect><rect class="fs-p-snow" x="20" y="74" width="80" height="9"></rect><path class="fs-p-ember-s" d="M26 74 L43 47 L60 74 L77 47 L94 74" stroke-width="8"></path></svg>
          <div class="font-semibold tracking-tight mt-4 text-xl">
           Business-Technical Bridge Building
          </div>
@@ -186,16 +130,7 @@
        </div>
        <div class="rounded-lg text-card-foreground text-center flex flex-col items-center bg-card shadow-lg hover:shadow-primary/20 hover:border-primary/50 border transition-all duration-300 transform hover:-translate-y-2">
         <div class="flex flex-col space-y-1.5 p-6 items-center pb-4">
-         <svg class="lucide lucide-square-chart-gantt h-10 w-10 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-          <rect height="18" rx="2" width="18" x="3" y="3">
-          </rect>
-          <path d="M9 8h7">
-          </path>
-          <path d="M8 12h6">
-          </path>
-          <path d="M11 16h5">
-          </path>
-         </svg>
+         <svg aria-hidden="true" class="fs-svc" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect class="fs-p-snow-s" x="24" y="42" width="72" height="36" stroke-width="8"></rect><rect class="fs-p-ember" x="66" y="50" width="20" height="20"></rect></svg>
          <div class="font-semibold tracking-tight mt-4 text-xl">
           Change Management
          </div>
@@ -207,9 +142,9 @@
       </div>
      </div>
     </section>
-    <section class="py-12 md:py-24 bg-background" id="about">
+    <section class="py-12 fs-section bg-background" id="about">
      <div class="container mx-auto px-4 md:px-6">
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="text-center max-w-3xl mx-auto fs-section-head">
        <h2 class="text-3xl md:text-5xl font-headline font-bold">
         About ForgeSync
        </h2>
@@ -217,7 +152,7 @@
         Our mission is to empower businesses with efficient, scalable, and innovative processes.
        </p>
       </div>
-      <div class="space-y-20">
+      <div class="fs-stack-10">
        <div class="text-center max-w-4xl mx-auto">
         <p class="text-base md:text-lg text-foreground/80 leading-relaxed">
          Founded on the principle that a solid process is the bedrock of any successful enterprise, ForgeSync works closely with our clients to understand their unique challenges and co-create solutions that deliver lasting value. Our team combines broard knowledge with a passion for innovation to turn complex problems into simple, elegant workflows.
@@ -226,7 +161,7 @@
       </div>
      </div>
     </section>
-    <section class="py-12 md:py-24 bg-background" id="contact">
+    <section class="py-12 fs-section bg-background" id="contact">
      <div class="container mx-auto px-4 md:px-6">
       <div class="grid gap-12 md:grid-cols-2 items-center">
        <div class="space-y-6">
@@ -258,18 +193,33 @@
     <div class="container mx-auto px-4 md:px-6 py-12">
      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
       <div class="flex flex-col items-start">
-       <a class="flex items-center gap-2 mb-4" href="#">
-        <svg class="lucide lucide-mountain h-6 w-6 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-         <path d="m8 3 4 8 5-5 5 15H2L8 3z">
-         </path>
+       <a aria-label="ForgeSync home" class="fs-logo fs-logo-on-dark mb-4" href="#" style="gap:6px">
+        <svg aria-hidden="true" class="fs-mark" height="30" viewBox="0 0 120 120" width="30" xmlns="http://www.w3.org/2000/svg">
+         <polygon class="fs-bar-snow" points="48,76 96,76 104,96 40,96">
+         </polygon>
+         <polygon class="fs-bar-snow" points="24,50 72,50 80,70 16,70">
+         </polygon>
+         <polygon class="fs-ember" points="48,24 96,24 104,44 40,44">
+         </polygon>
         </svg>
-        <span class="text-lg font-semibold">
-         ForgeSync
+        <span class="fs-wordmark" style="font-size:22px">
+         <span class="fs-forge">Forge</span><span class="fs-sync">Sync</span>
         </span>
        </a>
        <p class="text-sm text-muted-foreground max-w-xs">
         Streamlining operations for a brighter future.
        </p>
+      </div>
+      <div class="flex flex-col items-start">
+       <p class="fs-eyebrow">
+        Elsewhere
+       </p>
+       <a class="fs-footer-link" href="https://projects.forgesync.co.nz">
+        Project portfolio
+       </a>
+       <a class="fs-footer-link" href="mailto:contact@forgesync.co.nz">
+        contact@forgesync.co.nz
+       </a>
       </div>
      </div>
      <div class="mt-8 border-t border-border pt-6 text-center text-sm text-muted-foreground">

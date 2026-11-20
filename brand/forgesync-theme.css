@@ -1,0 +1,386 @@
+/* ===================================================================
+   ForgeSync - design system applied
+   Source: ForgeSync Design System (tokens.json / README.md / bundle.css)
+
+   Layer 1  raw brand tokens  (--fs-*)
+   Layer 2  mapped onto the page's existing shadcn variables
+   Layer 3  component rules that carry the brand's character
+   =================================================================== */
+
+/* ---------- Layer 1: brand tokens ---------- */
+:root {
+  /* colour - light theme */
+  --fs-surface:          #F7F7F8;
+  --fs-surface-raised:   #FFFFFF;
+  --fs-surface-sunken:   #ECEEF0;
+  --fs-panel:            #15181C;
+  --fs-ink:              #15181C;
+  --fs-ink-muted:        #5B636D;
+  --fs-line:             #DADDE1;
+  --fs-steel:            #15181C;
+  --fs-snow:             #F2F4F6;
+  --fs-ember:            #F0641E;
+  --fs-ember-text:       #B8460F;
+  --fs-spark:            #FFB238;
+  --fs-on-accent:        #FFFFFF;
+  --fs-on-panel:         #F2F4F6;
+  --fs-on-panel-muted:   #A3ABB5;
+  --fs-danger:           #B3261E;
+
+  /* type */
+  --fs-font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --fs-font-sans:    "Barlow", system-ui, sans-serif;
+
+  /* spacing */
+  --fs-space-1:  4px;
+  --fs-space-2:  8px;
+  --fs-space-4:  16px;
+  --fs-space-6:  24px;
+  --fs-space-10: 40px;
+  --fs-space-16: 64px;
+
+  /* shape */
+  --fs-radius-sm:   3px;
+  --fs-radius-md:   6px;
+  --fs-radius-lg:   10px;
+  --fs-radius-icon: 22%;
+
+  /* elevation - crisp, low, steel-tinted */
+  --fs-shadow-sm:    0 1px 2px rgba(21,24,28,.08), 0 1px 1px rgba(21,24,28,.06);
+  --fs-shadow-md:    0 4px 10px -2px rgba(21,24,28,.12), 0 2px 4px -2px rgba(21,24,28,.08);
+  --fs-shadow-lg:    0 12px 24px -6px rgba(21,24,28,.18), 0 4px 8px -4px rgba(21,24,28,.10);
+  --fs-shadow-inset: inset 0 1px 2px rgba(21,24,28,.08);
+  --fs-shadow-focus: 0 0 0 2px var(--fs-surface), 0 0 0 4px var(--fs-ember-text);
+}
+
+/* ---------- Layer 2: map onto the page's shadcn variables ----------
+   Values are HSL triplets because every utility reads hsl(var(--x)). */
+:root {
+  --background:            240 7% 97%;    /* surface        #F7F7F8 */
+  --foreground:            214 14% 10%;   /* ink            #15181C */
+  --card:                    0 0% 100%;   /* surface-raised #FFFFFF */
+  --card-foreground:       214 14% 10%;
+  --popover:                 0 0% 100%;
+  --popover-foreground:    214 14% 10%;
+  --primary:                20 85% 39%;   /* ember-text     #B8460F */
+  --primary-foreground:      0 0% 100%;   /* on-accent      #FFFFFF */
+  --secondary:             210 12% 93%;   /* surface-sunken #ECEEF0 */
+  --secondary-foreground:  214 14% 10%;
+  --muted:                 210 12% 93%;
+  --muted-foreground:      213  9% 39%;   /* ink-muted      #5B636D */
+  --accent:                  0 0% 100%;   /* secondary button face  */
+  --accent-foreground:     214 14% 10%;
+  --destructive:             3 71% 41%;   /* danger         #B3261E */
+  --destructive-foreground:  0 0% 100%;
+  --border:                214 10% 87%;   /* line           #DADDE1 */
+  --input:                 214 10% 87%;
+  --ring:                   20 85% 39%;   /* ember-text focus ring  */
+  --radius: 0.625rem;                     /* radius-lg 10px         */
+
+  /* charts: ember, steel, spark - brand order */
+  --chart-1:  20 88% 53%;
+  --chart-2: 214 14% 10%;
+  --chart-3:  37 100% 61%;
+  --chart-4: 213  9% 39%;
+  --chart-5:  20 85% 39%;
+}
+
+/* Dark theme values are defined so a future toggle works. Deliberately not
+   wired to prefers-color-scheme: the live site is a light-ground site today. */
+.dark {
+  --fs-surface:        #0F1215;
+  --fs-surface-raised: #1B1F24;
+  --fs-surface-sunken: #0A0C0E;
+  --fs-panel:          #22272D;
+  --fs-ink:            #F2F4F6;
+  --fs-ink-muted:      #A3ABB5;
+  --fs-line:           #2C3238;
+  --fs-ember-text:     #F0641E;
+  --fs-on-accent:      #15181C;
+  --fs-danger:         #F2867D;
+  --fs-shadow-sm:    0 1px 2px rgba(0,0,0,.40);
+  --fs-shadow-md:    0 4px 12px -2px rgba(0,0,0,.50);
+  --fs-shadow-lg:    0 12px 28px -6px rgba(0,0,0,.60), 0 0 0 1px rgba(242,244,246,.06);
+  --fs-shadow-inset: inset 0 1px 2px rgba(0,0,0,.45);
+  --fs-shadow-focus: 0 0 0 2px var(--fs-surface), 0 0 0 4px var(--fs-ember);
+
+  --background:            210 17%  7%;
+  --foreground:            210 18% 96%;
+  --card:                  213 14% 12%;
+  --card-foreground:       210 18% 96%;
+  --popover:               213 14% 12%;
+  --popover-foreground:    210 18% 96%;
+  --primary:                20 88% 53%;
+  --primary-foreground:    214 14% 10%;
+  --secondary:             210 17%  5%;
+  --secondary-foreground:  210 18% 96%;
+  --muted:                 210 17%  5%;
+  --muted-foreground:      213 11% 68%;
+  --accent:                213 14% 12%;
+  --accent-foreground:     210 18% 96%;
+  --destructive:             5 82% 72%;
+  --destructive-foreground: 214 14% 10%;
+  --border:                210 12% 20%;
+  --input:                 210 12% 20%;
+  --ring:                   20 88% 53%;
+}
+
+/* ---------- Layer 3: brand character ---------- */
+
+/* Type. Barlow Condensed for display, Barlow for text.
+   Dashboards and tables use tabular figures. */
+.font-headline { font-family: var(--fs-font-display) !important; }
+.font-body     { font-family: var(--fs-font-sans) !important; }
+body           { font-family: var(--fs-font-sans); font-variant-numeric: tabular-nums; }
+
+h1, h2, h3 { font-family: var(--fs-font-display); }
+h1 { font-weight: 700; letter-spacing: .01em; }
+h2 { font-weight: 700; letter-spacing: .01em; }
+
+/* Vertical rhythm, on the system's spacing scale rather than Tailwind's.
+   space-10 (40px) is the gap between sections, space-16 (64px) the page
+   margin on desktop. The old page used 96px bands plus a 90vh hero, which
+   pushed every section below the fold. These classes carry the real values;
+   the py-12 left on each section is only a fallback if this file fails. */
+.fs-hero {
+  padding-top: var(--fs-space-16) !important;
+  padding-bottom: var(--fs-space-16) !important;
+}
+.fs-section {
+  padding-top: var(--fs-space-10) !important;
+  padding-bottom: var(--fs-space-10) !important;
+}
+.fs-section-head { margin-bottom: var(--fs-space-10); }
+.fs-stack-10 > * + * { margin-top: var(--fs-space-10); }
+
+@media (min-width: 768px) {
+  .fs-hero {
+    padding-top: 88px !important;
+    padding-bottom: 88px !important;
+  }
+  .fs-section {
+    padding-top: var(--fs-space-16) !important;
+    padding-bottom: var(--fs-space-16) !important;
+  }
+  .fs-section-head { margin-bottom: 48px; }
+}
+
+/* Eyebrow: display 600, uppercase, +0.1em */
+.fs-eyebrow {
+  margin: 0 0 var(--fs-space-2);
+  font-family: var(--fs-font-display);
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--fs-ink-muted);
+}
+
+/* Wordmark: FORGE 700 + SYNC 400, one colour, tracked +0.06em, no space */
+.fs-logo { display: inline-flex; align-items: center; line-height: 1; color: var(--fs-ink); }
+.fs-logo-on-dark { color: var(--fs-on-panel); }
+.fs-wordmark {
+  font-family: var(--fs-font-display);
+  letter-spacing: .06em;
+  line-height: 1;
+  white-space: nowrap;
+  color: inherit;
+  text-transform: uppercase;
+}
+.fs-forge { font-weight: 700; }
+.fs-sync  { font-weight: 400; }
+
+/* The mark. Fills bind to tokens so it re-themes with the page. */
+.fs-mark      { display: block; flex-shrink: 0; }
+.fs-bar       { fill: var(--fs-ink); }
+.fs-bar-snow  { fill: var(--fs-snow); }
+.fs-ember     { fill: var(--fs-ember); }
+.fs-tile      { fill: var(--fs-steel); }
+
+/* Site header and footer are dark panel bands. */
+header.sticky {
+  background: var(--fs-panel) !important;
+  color: var(--fs-on-panel);
+  box-shadow: var(--fs-shadow-sm);
+}
+/* Nav links are always visible at every width. The previous markup hid them
+   behind a hamburger that opened a Radix dialog, which never mounts on this
+   static export - so on phones there was no navigation at all. */
+.fs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--fs-space-1);
+}
+header.sticky nav a {
+  font-family: var(--fs-font-display);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--fs-on-panel-muted);
+  border-radius: var(--fs-radius-sm);
+  padding: 0 12px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+header.sticky nav a:hover { color: var(--fs-on-panel); }
+header.sticky nav a[aria-current="page"] {
+  color: var(--fs-on-panel);
+  box-shadow: inset 0 -3px 0 var(--fs-ember);
+}
+
+/* Below 640px the three links and the lockup will not share one row, so the
+   header becomes two rows rather than shrinking below a 44px touch target. */
+@media (max-width: 639px) {
+  header.sticky .container {
+    height: auto;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    row-gap: 2px;
+  }
+  header.sticky nav {
+    width: 100%;
+    margin-left: -12px;
+  }
+  header.sticky nav a { font-size: 15px; padding: 0 12px; }
+}
+
+footer {
+  background: var(--fs-panel) !important;
+  color: var(--fs-on-panel) !important;
+}
+footer .text-muted-foreground { color: var(--fs-on-panel-muted) !important; }
+footer .border-border { border-color: rgba(242,244,246,.14) !important; }
+/* The eyebrow's ink-muted is a light-ground colour; on panel it would sit at
+   about 2.2:1, so footer eyebrows take on-panel-muted (7.7:1) instead. */
+footer .fs-eyebrow { color: var(--fs-on-panel-muted); }
+.fs-footer-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--fs-on-panel);
+  font-size: 15px;
+  text-decoration: none;
+}
+.fs-footer-link:hover { text-decoration: underline; }
+
+/* Tertiary route to the projects site: the system's ghost button, so it is
+   available without competing with the two real calls to action. */
+.fs-hero-aside { margin: 0; }
+.fs-hero-aside a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 8px;
+  border-radius: var(--fs-radius-sm);
+  font-family: var(--fs-font-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--fs-ember-text);
+  text-decoration: none;
+}
+.fs-hero-aside a:hover { background: var(--fs-surface-sunken); }
+
+/* Buttons. Display 600, uppercase, +0.05em, 44px, radius-md.
+   Primary = ember-text fill. Secondary = raised face, ink text, muted border. */
+a.bg-primary, a.bg-accent {
+  font-family: var(--fs-font-display);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  height: 44px;
+  border-radius: var(--fs-radius-md) !important;
+  border: 1px solid transparent;
+  box-shadow: none !important;
+  transition: box-shadow 120ms ease, background-color 120ms ease, filter 120ms ease;
+}
+a.bg-primary { background: var(--fs-ember-text) !important; color: var(--fs-on-accent) !important; }
+a.bg-primary:hover { filter: brightness(1.08); box-shadow: var(--fs-shadow-sm) !important; }
+a.bg-accent {
+  background: var(--fs-surface-raised) !important;
+  color: var(--fs-ink) !important;
+  border-color: var(--fs-ink-muted);
+  box-shadow: var(--fs-shadow-sm) !important;
+}
+a.bg-accent:hover { box-shadow: var(--fs-shadow-md) !important; }
+/* The brand's buttons move light, not scale. */
+a.bg-primary:hover, a.bg-accent:hover { transform: none !important; }
+a.bg-primary:active, a.bg-accent:active { box-shadow: var(--fs-shadow-inset) !important; filter: none; }
+
+/* Cards: raised face, hairline border, radius-lg, crisp shadow.
+   Hover changes elevation only. */
+[class*="bg-card"] {
+  background: var(--fs-surface-raised);
+  border: 1px solid var(--fs-line) !important;
+  border-radius: var(--fs-radius-lg) !important;
+  box-shadow: var(--fs-shadow-sm) !important;
+  transition: box-shadow 160ms ease;
+}
+[class*="bg-card"]:hover {
+  box-shadow: var(--fs-shadow-md) !important;
+  border-color: var(--fs-line) !important;
+  transform: none !important;
+}
+[class*="bg-card"] .font-semibold {
+  font-family: var(--fs-font-display);
+  font-weight: 700;
+  letter-spacing: .01em;
+  color: var(--fs-ink);
+}
+
+/* Icons: mitred joins and square caps. The brand uses no rounded strokes. */
+svg.lucide {
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 4;
+}
+
+/* Service icon tiles, drawn in the mark's language: a steel tile with
+   radius-icon corners, flat snow shapes with square corners and mitred
+   strokes, and exactly one ember part. Same tile in both themes.
+   The tile is the element's own background, so the 120-unit artwork keeps
+   its built-in inset (roughly 20 to 100) rather than needing padding. */
+.fs-svc {
+  display: block;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  background: var(--fs-steel);
+  border-radius: var(--fs-radius-icon);
+}
+.fs-svc .fs-p-snow  { fill: var(--fs-snow); }
+.fs-svc .fs-p-ember { fill: var(--fs-ember); }
+.fs-svc .fs-p-snow-s {
+  fill: none;
+  stroke: var(--fs-snow);
+  stroke-linejoin: miter;
+  stroke-linecap: square;
+}
+.fs-svc .fs-p-ember-s {
+  fill: none;
+  stroke: var(--fs-ember);
+  stroke-linejoin: miter;
+  stroke-linecap: square;
+}
+
+/* Links: ember-text, because ember itself is only 3.0:1 on light grounds. */
+a.text-primary { color: var(--fs-ember-text) !important; }
+
+/* Focus ring on every control. Never removed. */
+a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: var(--fs-shadow-focus) !important;
+}
+
+/* Near-square corners throughout, like cut stock. */
+.rounded-md { border-radius: var(--fs-radius-md); }
+.rounded-lg { border-radius: var(--fs-radius-lg); }
